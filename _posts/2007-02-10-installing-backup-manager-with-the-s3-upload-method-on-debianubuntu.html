@@ -1,0 +1,28 @@
+--- 
+layout: post
+title: Installing backup-manager with the s3 upload method on Debian/Ubuntu
+tags: 
+- Debian/Ubuntu
+- General
+- Programming
+status: publish
+type: post
+published: true
+meta: 
+  btc_comment_counts: a:0:{}
+  btc_comment_summary: a:0:{}
+---
+<p><a href="http://www.backup-manager.org/"><strong>backup-manager</strong></a> is a simple and straightforward backup solution and <a href="http://aws.amazon.com"><strong>Amazon S3</strong></a> gives you reliable remote storage. </p>
+
+<p>Since the backup-manager versions in Debian and Ubuntu are little bit outdated, I would recommend installing the 0.7.5 Release from the <a href="http://www.backup-manager.org/download/">Website</a>.  While the installation of backup-manager is painless, getting the s3 part running a little bit tricky (and undocumented).<br /> The s3 part of backup-manager is based on the  Net::Amazon::S3 perl module and this needs the XML::LibXML::XPathContext module, which is, as far as I can see, not included in one of the libxml-*-perl packages in Debian or Ubuntu.</p> 
+<p>So, this procedure gives you all the needed dependencies:</p>
+
+<pre>
+sudo apt-get install libperl6-slurp-perl libxml2-dev
+sudo cpan XML::LibXML
+sudo cpan Net::Amazon::S3
+</pre>
+
+<p>
+ <em><b>Update:</b> (14.06.07) Ubuntu feisty now contains the 7.5.3 version of backup-manager.</em>
+</p>

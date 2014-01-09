@@ -1,0 +1,36 @@
+--- 
+layout: post
+title: The Canon LIDE 60 and Ubuntu Dapper
+tags: 
+- Debian/Ubuntu
+- General
+status: publish
+type: post
+published: true
+meta: 
+  btc_comment_counts: a:0:{}
+  btc_comment_summary: a:0:{}
+---
+Here's how to get the Canon LIDE 60 scanner working with Ubuntu Dapper:
+
+The device is a Genesys Logic GL646 and GL841 based scanner, so it uses the sane genesys driver. Make sure that the driver is enabled in /etc/sane.d/dll.conf.
+
+Now plug in the scanner and run sane-find-scanner and you will get something like this (if not, maybe you should try running this with sudo):
+
+<em> found USB scanner (vendor=0x04a9, product=0x221c, chip=GL841?)  at libusb:004:010</em>
+
+Using these values add an entry for the scanner to /etc/sane.d/genesys.conf:
+
+<em> # Canon LiDE 60
+usb 0x04a9 0x221c</em>
+
+To use the device as a non-rootl user, you have to prepare udev by editing the libsane udev rules at /etc/udev/rules.d/45-libsane.rules (the actual name of the file may differ, remember Dapper is still in development) and add a line using the values from sane-find-scanner:
+
+<em> # Canon Inc.|LIDE 60
+SYSFS{idVendor}=="04a9", SYSFS{idProduct}=="221c", MODE="664",  GROUP="scanner"</em>
+
+now restart udev with
+
+<em> sudo /etc/init.d/udev restart</em>
+
+Fire up xsane and it should work. Please leave a comment if you know why gnome-volume-manager doesn't start xsane when I plug in the scanner.

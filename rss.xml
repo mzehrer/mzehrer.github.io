@@ -1,0 +1,31 @@
+---
+layout: nil
+---
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<!-- RSS as a "standard" is terrible; use Atom.  -coyled -->
+<!-- http://coyled.com/atom.xml -->
+
+  <channel>
+    <title>the correct shade of blue</title>
+    <link>http://zepan.org/</link>
+    <atom:link href="http://zepan.org/rss.xml" rel="self" type="application/rss+xml" />
+    <description>The weblog of Michael Zehrer</description>
+    <language>en-us</language>
+    <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
+    <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %Z" }}</lastBuildDate>
+
+    {% for post in site.posts %}
+    <item>
+      <title>{{ post.title }}</title>
+      <link>http://zepan.org{{ post.url }}</link>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
+      <author>zehrer@zepan.org (Michael Zehrer)</author>
+      <guid>http://zepan.org{{ post.id }}</guid>
+      <description>{{ post.content | xml_escape }}</description>
+    </item>
+    {% endfor %}
+
+  </channel> 
+</rss>

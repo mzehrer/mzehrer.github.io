@@ -1,0 +1,22 @@
+--- 
+layout: post
+title: My Debian repository
+tags: 
+- General
+status: publish
+type: post
+published: true
+meta: 
+  btc_comment_counts: a:0:{}
+  btc_comment_summary: a:0:{}
+---
+It seems that nearly every piece of software has also a <a href="http://packages.debian.org/">Debian package</a>, but from time to time there is a program that is not (yet) packaged. So I set up a little repository where I will put packages of software which are  important for me but can't be found in the offical repository. 
+
+Put this in your sources.list to get the packages:
+
+<pre>
+deb http://www.zepan.org/debian binary/
+deb-src http://www.zepan.org/debian source/
+</pre>
+
+Btw.: I'm also maintaing a package in the offical Debian  repository: <a href="http://packages.debian.org/unstable/web/oops">oops</a> .

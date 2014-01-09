@@ -1,0 +1,25 @@
+--- 
+layout: page
+title: My Debian Repository
+tags: 
+- General
+status: draft
+type: page
+published: false
+meta: 
+  _edit_last: "2"
+  _edit_lock: "1243332222"
+  btc_comment_counts: a:0:{}
+---
+This is my personal Debian/Ubuntu package repository. I build packages for software that I need and that I could not find in other repositories. Please report any bugs with these packages to me an not to Debian/Ubuntu. The repository currently contains:
+<ul>
+	<li><strong>logmon</strong> - This program will monitor one or more log files, updating when more data is available ala 'tail -f' , within a common terminal window via a "split window". User can scroll up/down/left/right through all the windows. A header displays each frames file name, and number of lines in the file. Very useful when watching several log files at the same time. It is taken from <a target="_blank" href="http://www.zepan.org/ound%20patches%20for%20the%20TiMidity%20MIDI%20to%20WAVE%20convert">here</a>.</li>
+	<li><strong>timidity-eaw-patches </strong> - Sound patches for the <a href="http://timidity.sourceforge.net/">TiMidity</a> MIDI to WAVE converter. <a href="http://www.zepan.org/index.php/2004/06/06/sound-patches-for-timidity/">Please see this post</a></li>
+</ul>
+The repository is located at <a target="_blank" href="http://zepan.org/debian/">http://zepan.org/debian/</a>
+To use this repository with apt-get, add this to your /etc/apt/sources.list:
+
+<pre>
+deb http://www.zepan.org/debian binary/
+deb-src http://www.zepan.org/debian source/
+</pre>

@@ -1,0 +1,31 @@
+---
+layout: nil
+---
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+  <title>the correct shade of blue</title>
+  <link href="http://zepan.org/"/>
+  <link type="application/atom+xml" rel="self" href="http://zepan.org/atom.xml"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>http://zepan.org/</id>
+  <author>
+    <name>Michael Zehrer</name>
+    <email>zehrer@zepan.org</email>
+  </author>
+
+  {% for post in site.posts %}
+  <entry>
+    <id>http://zepan.org{ post.id }}</id>
+    <link type="text/html" rel="alternate" href="http://zepan.org{{ post.url }}"/>
+    <title>{{ post.title }}</title>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <author>
+      <name>Michael Zehrer</name>
+      <uri>http://zepan.org/</uri>
+    </author>
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+  {% endfor %}
+ 
+</feed>

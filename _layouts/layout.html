@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>{{ page.title }}</title>
+  <meta name="author" content="Michael Zehrer" />
+  <meta name="description" content="More content by Michael Zehrer." />
+  <meta name="google-site-verification" content="BojDxMkUZWbh6PIaVNlcM8EUBWqTjLtLOFForpxLceo" />
+  <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/zepan/iwwy" />
+  <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700,400italic,500italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/javascript/jquery.url.js"></script>
+  <script type="text/javascript" src="/javascript/application.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      {{ page.script }}
+    });
+  </script>
+</head>
+<body>
+
+<div id="header">
+  <a href="/">
+    <img src="/images/mzehrer.png" height="116" width="100" class="avatar" id="avatar"/>
+  </a>
+
+  <div id="mousing">&nbsp;</div>
+  <div class="site">
+    <a href="https://twitter.com/mzehrer" id="twitter">
+      <img src="/images/twitter.png" alt="twitter" title="@mzehrer on Twitter" height="16" width="16" />
+    </a>
+    <a href="https://plus.google.com/108253608683408979021/posts" id="googleplus">
+      <img src="/images/googleplus.png" alt="google+" title="Michael on Google+" height="16" width="16" />
+    </a>
+    <a href="https://pinboard.in/u:mzehrer" id="pinboard">
+      <img src="/images/pinboard.png" alt="Pinboard" title="My links on Pinboard" height="16" width="16" />
+    </a>
+    <a href="http://feeds.feedburner.com/zepan/iwwy" id="rss">
+      <img src="/images/rss.png" alt="rss" title="Subscribe to this blog's RSS feed" height="16" width="16" />
+    </a>
+  </div>
+
+  <div id="sections">
+    <div><a href="/">home</a></div>
+    <div><a href="/posts.html">posts</a></div>
+    <div><a href="/links.html">links</a></div>
+    <div><a href="/about.html">about</a></div>
+    <div><a href="/projects.html">projects</a></div>
+    <div><a href="/imprint.html">imprint</a></div>
+  </div>
+
+  <!--div id="sponsoredlinks">
+      <strong>sponsored links:</strong><br/>
+  </div-->
+
+</div>
+
+{{ content }}
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-259428-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<div id="BF_WIDGET_1">&nbsp;</div>
+<script type="text/javascript">
+(function( ){
+BF_WIDGET_JS=document.createElement("script"); BF_WIDGET_JS.type="text/javascript";
+BF_WIDGET_SRC="http://ct.buzzfeed.com/wd/UserWidget?u=zepan.org&to=1&or=vb&wid=1&cb=" + (new Date()).getTime();
+setTimeout(function() {document.getElementById("BF_WIDGET_1").appendChild(BF_WIDGET_JS);BF_WIDGET_JS.src=BF_WIDGET_SRC},1);
+})();
+</script>
+
+</body>
+</html>
